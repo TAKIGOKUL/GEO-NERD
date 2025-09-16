@@ -1,5 +1,9 @@
 # 🌍 GeoGuess Game
 
+
+https://takigokul.github.io/GEO-NERD/
+
+
 An interactive geography guessing game built with React where players view images of famous locations around the world and guess their location on a scrollable world map.
 
 ## Features
