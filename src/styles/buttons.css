@@ -1,0 +1,145 @@
+/* Modern Neumorphism Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--text-primary);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(254, 74, 86, 0.3);
+  border: 2px solid var(--secondary-bg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 6px 25px rgba(254, 74, 86, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 2px 12px rgba(254, 74, 86, 0.2);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-primary);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--text-primary);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(254, 74, 86, 0.3);
+  border: 2px solid var(--secondary-bg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 6px 25px rgba(254, 74, 86, 0.5);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffd43b, #fab005);
+  color: #000000;
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light),
+    0 4px 20px rgba(255, 212, 59, 0.3);
+}
+
+.btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light),
+    0 6px 25px rgba(255, 212, 59, 0.4);
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light),
+    0 6px 25px rgba(254, 74, 86, 0.4);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+/* Game Finished */
+.game-finished {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.game-finished h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.game-finished p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Loading */
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #94a3b8;
+}

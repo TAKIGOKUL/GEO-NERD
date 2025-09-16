@@ -1,0 +1,167 @@
+/* Map Markers - Geo-Nerd Design */
+.user-guess-marker {
+  z-index: 800;
+}
+
+.user-guess-pin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: guessConfirmed 0.6s ease-out;
+}
+
+.guess-pin-head {
+  font-size: 24px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+  color: var(--accent);
+}
+
+.guess-pin-circle {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--text-primary);
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    0 0 0 3px rgba(0, 212, 255, 0.3);
+  animation: accentPulse 2s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 2px 6px rgba(0, 0, 0, 0.4),
+      0 0 0 3px rgba(0, 212, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 0 5px rgba(0, 212, 255, 0.5);
+  }
+}
+
+@keyframes guessConfirmed {
+  0% { transform: scale(0.8) translateY(-10px); opacity: 0.8; }
+  50% { transform: scale(1.1) translateY(-5px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes greenPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 2px 6px rgba(0, 0, 0, 0.3),
+      0 0 0 2px rgba(0, 255, 136, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.4),
+      0 0 0 4px rgba(0, 255, 136, 0.5);
+  }
+}
+
+/* Actual Location Marker */
+.actual-marker {
+  z-index: 900;
+}
+
+.actual-pin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: actualLocationPulse 2s ease-in-out infinite;
+}
+
+.actual-head {
+  font-size: 28px;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.6));
+  color: var(--text-primary);
+}
+
+@keyframes actualLocationPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Distance Badge */
+.distance-label {
+  z-index: 850;
+}
+
+.distance-badge {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 
+    0 4px 12px rgba(0, 212, 255, 0.4),
+    0 0 0 2px var(--text-primary);
+  white-space: nowrap;
+  border: 2px solid var(--accent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.marker-popup {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  background: var(--surface) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--elevated) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface) !important;
+  border: 1px solid var(--elevated) !important;
+  border-top: none !important;
+  border-right: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Enhanced map controls */
+.map-controls {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.map-instruction {
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px var(--accent); }
+  to { text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+}
+
+.map-result {
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+}
