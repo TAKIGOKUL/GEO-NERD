@@ -1,4 +1,5 @@
 # 🌍 Geo-Nerd Mobile
+https://takigokul.github.io/GEO-NERD/
 
 A modern, mobile-first geography guessing game built with React and TypeScript, featuring an ash-colored glassmorphic design system.
 
