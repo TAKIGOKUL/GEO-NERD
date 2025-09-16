@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { LeaderboardService, PlayerScore } from '../services/leaderboardService';
 import './Leaderboard.css';
 
@@ -15,13 +15,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ isVisible, onClose, currentPl
   const [currentPlayerBest, setCurrentPlayerBest] = useState<PlayerScore | null>(null);
   const [currentPlayerStats, setCurrentPlayerStats] = useState<any>(null);
 
-  useEffect(() => {
-    if (isVisible) {
-      loadLeaderboard();
-    }
-  }, [isVisible, currentPlayerId]);
-
-  const loadLeaderboard = () => {
+  const loadLeaderboard = useCallback(() => {
     const topScores = LeaderboardService.getTopScores(20);
     setScores(topScores);
     
@@ -33,7 +27,13 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ isVisible, onClose, currentPl
       setCurrentPlayerBest(bestScore);
       setCurrentPlayerStats(playerStats);
     }
-  };
+  }, [currentPlayerId]);
+
+  useEffect(() => {
+    if (isVisible) {
+      loadLeaderboard();
+    }
+  }, [isVisible, currentPlayerId, loadLeaderboard]);
 
   const formatTimestamp = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString('en-US', {

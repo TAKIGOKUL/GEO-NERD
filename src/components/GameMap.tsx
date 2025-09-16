@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import L from 'leaflet';
 import { Location } from '../data/locations';
 import 'leaflet/dist/leaflet.css';
@@ -66,7 +66,7 @@ const GameMap: React.FC<GameMapProps> = ({
   };
 
   // Function to find minimum distance from actual location
-  const findMinDistance = (): number | null => {
+  const findMinDistance = useCallback((): number | null => {
     if (!location || guesses.length === 0) return null;
     
     let minDist = Infinity;
@@ -83,7 +83,7 @@ const GameMap: React.FC<GameMapProps> = ({
     });
     
     return minDist === Infinity ? null : minDist;
-  };
+  }, [location, guesses]);
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
@@ -282,7 +282,7 @@ const GameMap: React.FC<GameMapProps> = ({
   useEffect(() => {
     const newMinDistance = findMinDistance();
     setMinDistance(newMinDistance);
-  }, [guesses, location]);
+  }, [guesses, location, findMinDistance]);
 
   return (
     <div className="game-map">

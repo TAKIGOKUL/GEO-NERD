@@ -8,7 +8,7 @@ import Results from './Results';
 import './Results.css';
 import Leaderboard from './Leaderboard';
 import { GameStats, RoundResult } from '../App';
-import { LeaderboardService, PlayerScore } from '../services/leaderboardService';
+import { LeaderboardService } from '../services/leaderboardService';
 import './Game.css';
 
 interface GameProps {
